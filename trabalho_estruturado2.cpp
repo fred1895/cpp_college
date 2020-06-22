@@ -32,15 +32,14 @@ int main()
 			cin >> option;
 		}
 		
+		//Calculators
 		float
 		IPI = 8.0,
 		additionPorcentage = 2.0,
 		discountPorcentage = 3.5,
 		carFinalPrice = carInitialPrice, 
-		IPI_CALCULATED = carInitialPrice*IPI/100,
-		additionPrice = carInitialPrice*additionPorcentage/100,
-		additionPriceWithIPI = carFinalPrice*additionPorcentage/100,
-		discountCompleteCar = carFinalPrice*discountPorcentage/100;
+		IPI_CALCULATED = carFinalPrice*IPI/100,
+		additionPrice = carInitialPrice*additionPorcentage/100.0;
 		
 		switch (option){
 			case 1:
@@ -50,7 +49,7 @@ int main()
 				
 			case 2:
 				carFinalPrice += IPI_CALCULATED;
-				carFinalPrice += additionPriceWithIPI;
+				carFinalPrice += carFinalPrice*additionPorcentage/100.0;
 				option2Chosen ++;
 				break;
 				
@@ -65,16 +64,16 @@ int main()
 				break;
 				
 			case 5:
-				carFinalPrice += IPI_CALCULATED + (additionPrice*3);
-				carFinalPrice -= discountCompleteCar;
+				carFinalPrice += IPI_CALCULATED + additionPrice*3;
+				carFinalPrice -= carFinalPrice*discountPorcentage/100;
 				option5Chosen ++;
 				break;
 				
 			default:
 				cout <<"Operação inválida.";
 		}
+		
 		printf( "O valor total do carro foi %.2f \n", carFinalPrice);
-		//cout <<"O valor total do carro ficou em: " <<carFinalPrice;
 		
 		cout <<"\nDeseja repetir a operação? (s/n) ";
 		cin >> answer;
