@@ -41,7 +41,7 @@ void printList(float list[], int &posUltimoElemLista) {
 	int i;
 	for(i = 0; i < posUltimoElemLista; i++) {
 		cout << list[i] << "\n";
-	} 
+	} 	
 }
 
 float pegaValor() {
@@ -64,8 +64,8 @@ bool inserirFinal(float list[], float valor, int &posUltimoElemLista) {
 		cout << "ERRO: LISTA CHEIA. ";
 		return false;
 	} else {
+		list[(posUltimoElemLista + 1)] = valor;
 		posUltimoElemLista++;
-		list[posUltimoElemLista] = valor;
 	}
 	return true;
 	
