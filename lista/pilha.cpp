@@ -2,22 +2,57 @@
 #include <locale>
 #include <string>
 
-#define MAX_TAM 5
+#define MAX_TAM 10
 
 using namespace std;
 
 void empilha(int pilha[], int& tam, int valor);
-void desempilha(int pilha[], int& tam, int valor);
+int desempilha(int pilha[], int& tam, int valor);
 void acessoTopo(int pilha[], int& tam);
 void situacaoPilha(int pilha[], int& tam);
 
 int main() {
 	
-	int operacao, valor, topo = -1, pilha[MAX_TAM], resposta;
+	int opcao, valor, topo = -1, pilha[MAX_TAM], resposta;
 	
 	do {
+		cout <<"\nPILHA (LIFO - LAST IN FIRST OUT)\n\n";
+		cout << "\n1 - Inserir um valor na pilha;";
+		cout << "\n2 - Remover um valor na pilha;";
+		cout << "\n3 - Mostrar um elemento no topo da pilha;";
+		cout << "\n4 - Mostrar situacao da pilha;";
+		cout << "\n5 - Sair;";
 		
-	} while ();
+		cout <<"\nOpcao: ";
+		cin >> opcao;
+		
+		switch (opcao) {
+			case 1: 
+				cout <<"Digite o valor a ser empilhado: ";
+				cin >> valor;
+				empilha(pilha, topo, valor);
+				break;
+			
+			case 2: 
+				resposta = desempilha(pilha, topo, valor);
+				if (resposta == 0) 
+					cout << "\nAtencao. Pilha vazia.";
+				else 
+					cout << "\nValor removido.";
+				break;
+				
+			case 3:
+				acessoTopo(pilha, topo);
+				break;
+			case 4: 
+				situacaoPilha(pilha, topo);
+			case 5:
+				cout << "\nPrograma basico de pilha.\n";
+				break;
+			default:
+				cout << "\nOpcao invalida.\n";
+		}
+	} while (opcao != 5);
 	
 }
 
@@ -37,7 +72,7 @@ int desempilha(int pilha[], int& tam, int valor) {
 	}
 	else {
 		valor = pilha[tam];//Guarda o valor do topo
-		t--; // Atualiza o topo
+		tam--; // Atualiza o topo
 		return 1;
 	}
 }
@@ -60,7 +95,7 @@ void situacaoPilha(int pilha[], int& tam) {
 	}
 	else {
 		cout <<"\nTotal de elementos na pilha: " << tam + 1 << "\n";
-		cout<< "\nEspaco disponivel na pilha: " << MAX_TAM - (tam + 1); << "\n";
+		cout<< "\nEspaco disponivel na pilha: " << MAX_TAM - (tam + 1) << "\n";
 		
 	}
 	
