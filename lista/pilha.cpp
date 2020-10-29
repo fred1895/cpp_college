@@ -30,3 +30,14 @@ void empilha(int pilha[], int& tam, int valor) {
 		pilha[tam] = valor;
 	}
 }
+
+void desempilha(int pilha[], int& tam, int valor) {
+	if (tam == -1) {
+		return 0;
+	}
+	else {
+		valor = pilha[tam];//Guarda o valor do topo
+		t--; // Atualiza o topo
+		return 1;
+	}
+}
