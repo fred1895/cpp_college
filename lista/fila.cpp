@@ -46,7 +46,7 @@ int main() {
 				break;
 				
 			case 3:
-				acessoTopo(pilha, topo);
+				void elemPrimeiro(queue& fill);
 				break;
 			case 4: 
 				situacaoPilha(pilha, topo);
@@ -65,10 +65,10 @@ void enfileira(queue& fill)
 {
 	float valor;
 	if (fill.fim == MAX_TAM - 1) 
-		cout << "A fila está cheia";
+		cout << "\nA fila está cheia";
 	else 
 	{
-		cout << "Digite o valor a ser enfileirado: ";
+		cout << "\nDigite o valor a ser enfileirado: ";
 		cin >> valor;
 		
 		fill.fim++;
@@ -84,6 +84,16 @@ void desenfileira(queue& fill)
 	{
 		cout <<"\nValor removido: " << fill.fill[fill.inicio]; //Exibe o valor removido
 		fill.inicio++;//Atualiza a fila
+	}
+}
+
+void elemPrimeiro(queue& fill) {
+	if (fill.inicio > fill.fim)	//testando se a fila esta vazia
+		cout << "\nAtencao lista vazia";
+	else 
+	{
+		cout << "\nPrimeiro elemento da fila: " << fill.fill[fill.inicio];
+		
 	}
 }
 
