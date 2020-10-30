@@ -97,6 +97,24 @@ void elemPrimeiro(queue& fill) {
 	}
 }
 
+void situacaoFila(queue& fill) {
+	if (fill.inicio > fill.fim)	//testando se a fila esta vazia
+		cout << "\nAtencao lista vazia";
+	else 
+	{
+		cout << "\nTotal de elementos na fila: " << fill.fim - fill.inicio + 1 << "\n";
+		cout << "\n\nEspaco disponivel na fila: " << MAX_TAM - (fill.fim + 1) << "\n";
+		cout << "\n\nPosicao do primeiro elemento na fila: " << fill.inicio << "\n";
+		cout << "\n\nPosicao do ultimo elemento na fila: " << fill.fim << "\n";
+		
+		cout << "\nValor\tPosicao no Vetor\n";
+		
+		for (int i = fill.inicio; i <= fill.fim; i++) {
+			cout << "\n" << fill.fill[i] << "\t" << i;
+		}
+	}
+}
+
 
 
 
