@@ -11,7 +11,7 @@ struct queue
 }
 
 void enfileira(queue& fill);
-void desenfileira(queue& fill)
+void desenfileira(queue& fill);
 void elemPrimeiro(queue& fill);
 void situacaoFila(queue& fill);
 
@@ -38,17 +38,11 @@ int main() {
 		
 		switch (opcao) {
 			case 1: 
-				cout <<"Digite o valor a ser inserido: ";
-				cin >> valor;
-				empilha(pilha, topo, valor);
+				enfileira(fila);
 				break;
 			
 			case 2: 
-				resposta = desempilha(pilha, topo, valor);
-				if (resposta == 0) 
-					cout << "\nAtencao. Pilha vazia.";
-				else 
-					cout << "\nValor removido.";
+				desenfileira(queue& fill);
 				break;
 				
 			case 3:
@@ -81,6 +75,21 @@ void enfileira(queue& fill)
 		fill.fill[fill.fim] = valor;
 	}
 }
+
+void desenfileira(queue& fill) 
+{
+	if (fill.inicio > fill.fim)	//testando se a fila esta vazia
+		cout << "\nAtencao lista vazia";
+	else 
+	{
+		cout <<"\nValor removido: " << fill.fill[fill.inicio]; //Exibe o valor removido
+		fill.inicio++;//Atualiza a fila
+	}
+}
+
+
+
+
 
 
 
