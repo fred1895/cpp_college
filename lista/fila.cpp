@@ -3,12 +3,13 @@
 #include <string>
 
 #define MAX_TAM 10
+using namespace std;
 
 struct queue 
 {
 	float fill[MAX_TAM];
 	int inicio, fim;
-}
+};
 
 void enfileira(queue& fill);
 void desenfileira(queue& fill);
@@ -42,23 +43,23 @@ int main() {
 				break;
 			
 			case 2: 
-				desenfileira(queue& fill);
+				desenfileira(fila);
 				break;
 				
 			case 3:
-				void elemPrimeiro(queue& fill);
+				elemPrimeiro(fila);
 				break;
 			case 4: 
-				void situacaoFila(queue& fill);
+				situacaoFila(fila);
 			case 5:
 				cout << "\nPrograma basico de fila.\n";
 				break;
 			default:
 				cout << "\nOpcao invalida.\n";
 		
-	}
-	while (opcao != 5);
+		} 
 	
+	} while (opcao != 5);
 }
 
 void enfileira(queue& fill) 
