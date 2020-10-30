@@ -49,9 +49,9 @@ int main() {
 				void elemPrimeiro(queue& fill);
 				break;
 			case 4: 
-				situacaoPilha(pilha, topo);
+				void situacaoFila(queue& fill);
 			case 5:
-				cout << "\nPrograma basico de pilha.\n";
+				cout << "\nPrograma basico de fila.\n";
 				break;
 			default:
 				cout << "\nOpcao invalida.\n";
