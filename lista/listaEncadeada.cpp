@@ -18,8 +18,8 @@ nodo* insereFim(node* ponteiro, int valor);
 
 void exibe(nodo* ponteiro);
 
-void removeFrente(nodo* ponteiro);
-void removeFim(nodo* ponteiro);
+nodo* removeFrente(nodo* ponteiro);
+nodo* removeFim(nodo* ponteiro);
 
 int subtituiNo(nodo* ponteiro, int posicao, int novoValor);
 
@@ -78,6 +78,35 @@ void exibe (nodo * ponteiro)
 	}
 }
 
+nodo* removeFrente(nodo* ponteiro) 
+{
+	nodo* aux;
+	aux = ponteiro;
+	ponteiro = ponteiro->prox;
+	delete aux;
+	return ponteiro;
+}
+
+void removeFim(nodo* ponteiro)
+{
+	nodo* aux, * ultimo;
+	if (!ponteiro->prox)
+	{
+		delete ponteiro;
+		ponteiro = NULL;
+		return ponteiro;
+	}
+	else
+	{
+		aux = ponteiro;
+		while (aux->prox->prox)
+			aux = aux->prox;
+		ultimo = aux ->prox;
+		delete ultimo;
+		aux ->prox = NULL;
+		return ponteiro;
+	}
+}
 
 
 
