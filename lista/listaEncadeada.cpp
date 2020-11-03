@@ -68,6 +68,16 @@ nodo* insereFim(node* ponteiro, int valor)
 	return ponteiro;
 }
 
+void exibe (nodo * ponteiro)
+{
+	cout << "\nListando\n";
+	while (ponteiro)
+	{
+		cout << "\n" << ponteiro->info;
+		ponteiro = ponteiro->prox;
+	}
+}
+
 
 
 
