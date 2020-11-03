@@ -21,7 +21,7 @@ void exibe(nodo* ponteiro);
 nodo* removeFrente(nodo* ponteiro);
 nodo* removeFim(nodo* ponteiro);
 
-int subtituiNo(nodo* ponteiro, int posicao, int novoValor);
+void subtituiNo(nodo* ponteiro, int posicao, int novoValor);
 
 int buscaSequencial(nodo* ponteiro, int valor);
 int contaNos(nodo* ponteiro);
@@ -108,9 +108,37 @@ void removeFim(nodo* ponteiro)
 	}
 }
 
+void subtituiNo(nodo* ponteiro, int posicao, int novoValor) 
+{
+	int conta = 1;
+	while (conta != posicao)
+	{
+		ponteiro = ponteiro->prox;
+		conta++;
+	}
+	ponteiro->info = novoValor;
+}
 
+int contaNos(nodo* ponteiro) 
+{
+	int conta = 0;
+	while (ponteiro) {
+		conta++;
+		ponteiro = ponteiro->prox;
+	}
+	return conta;
+}
 
-
+int buscaSequencial(nodo* ponteiro, int valor) 
+{
+	while (ponteiro)
+	{
+		if (ponteiro->info == valor) 
+			return 1;
+		ponteiro = ponteiro->prox;
+	}
+	return 0;
+}
 
 
 
